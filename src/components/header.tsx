@@ -20,27 +20,27 @@ const MainHeader = observer(() => {
     () => [
       {
         title: "Главное меню",
-        path: "/",
+        path: "#",
       },
       {
         title: "Кто мы",
-        path: "/academy-interested",
+        path: "#academy-interested",
       },
       {
         title: "Нам доверяют",
-        path: "/trust",
+        path: "#trust",
       },
       {
         title: "Портфолио",
-        path: "/portfolio",
+        path: "#portfolio",
       },
       {
         title: "Наши услуги",
-        path: "/services",
+        path: "#services",
       },
       {
         title: "Контакты",
-        path: "/contacts",
+        path: "#contacts",
       },
     ],
     [],
@@ -58,6 +58,12 @@ const MainHeader = observer(() => {
         className={`px-5 md:px-10 lg:px-20 flex items-center justify-between py-7`}
       >
         <div className={"flex items-center gap-2"}>
+          <img
+            style={{ filter: "drop-shadow(5px 5px 20px cyan)" }}
+            src="/vector-icon.svg"
+            width={30}
+            alt=""
+          />
           <h3 className="text-lg font-bold sm:text-xl">
             Cloud Solutions It Academy
           </h3>
