@@ -2,7 +2,6 @@ import { observer } from "mobx-react-lite";
 import Home from "./pages/home.tsx";
 import Header from "./components/header.tsx";
 import AcademyInterested from "./pages/academy-interested.tsx";
-import BizHaqimizda from "./pages/biz-haqimizda.tsx";
 import WhoWe from "./pages/who-we.tsx";
 import Products from "./pages/products.tsx";
 import Trust from "./pages/trust.tsx";
@@ -22,7 +21,7 @@ const App = observer(() => {
       <AcademyInterested />
       <Trust />
       <Products />
-      <BizHaqimizda />
+      {/*<BizHaqimizda />*/}
     </>
   );
 });
