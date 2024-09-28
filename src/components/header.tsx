@@ -1,16 +1,12 @@
 import { observer } from "mobx-react-lite";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { AiFillPhone } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Dropdown } from "antd";
+import { Drawer, Menu } from "antd";
 
 const MainHeader = observer(() => {
-  // const [menuOpen, setMenuOpen] = useState(false);
-  //
-  // const toggleMenu = () => {
-  //   setMenuOpen(!menuOpen);
-  // };
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const scrollToSection = (e: any, id: string) => {
     e.preventDefault();
@@ -49,20 +45,24 @@ const MainHeader = observer(() => {
     [],
   );
 
-  const dropdownItems = useMemo(
+  const menuItems = useMemo(
     () =>
-      navbarData.map((item) => ({
-        key: item.title,
-        label: (
-          <Link
-            to={`#${item.path}`}
-            onClick={(e) => scrollToSection(e, item.path)}
-            className={`text-white hover:text-gray-300`}
-          >
-            {item.title}
-          </Link>
-        ),
-      })),
+      navbarData.map((item) => {
+        return {
+          key: item.path,
+          label: (
+            <Link
+              to={item.path}
+              onClick={(e) => {
+                scrollToSection(e, item.path);
+                setIsOpen(false);
+              }}
+            >
+              {item.title}
+            </Link>
+          ),
+        };
+      }),
     [navbarData],
   );
 
@@ -79,7 +79,7 @@ const MainHeader = observer(() => {
       >
         <div className={"flex items-center gap-2"}>
           <img
-            style={{ filter: "drop-shadow(5px 5px 20px cyan)" }}
+            style={{ filter: "drop-shadow(5px 5px 30px cyan)" }}
             src="/vector-icon.svg"
             width={30}
             alt=""
@@ -90,9 +90,32 @@ const MainHeader = observer(() => {
         </div>
 
         <div className={"flex items-center gap-4 md:hidden"}>
-          <Dropdown menu={{ items: dropdownItems }}>
-            <FaBars className="text-2xl cursor-pointer" />
-          </Dropdown>
+          <FaBars
+            className="text-2xl cursor-pointer"
+            onClick={() => setIsOpen(true)}
+          />
+          <Drawer
+            title={
+              <div className={"w-full flex items-center gap-2"}>
+                <img src="/vector-icon.svg" width={30} alt="" />
+                <h3 className="text-md font-bold sm:text-xl flex gap-2">
+                  Cloud Solutions{" "}
+                  <span className={"hidden md:flex"}>IT Academy</span>
+                </h3>
+              </div>
+            }
+            placement={"top"}
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+          >
+            <Menu
+              className={"bg-transparent w-full"}
+              defaultSelectedKeys={["1"]}
+              defaultOpenKeys={["sub1"]}
+              mode="inline"
+              items={menuItems}
+            />
+          </Drawer>
           {/*{menuOpen ? (*/}
           {/*  <MdClose className="text-2xl cursor-pointer" onClick={toggleMenu} />*/}
           {/*) : (*/}
