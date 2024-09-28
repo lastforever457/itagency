@@ -7,7 +7,7 @@ const Products = observer(() => {
         <h1 className="text-4xl text-center md:text-6xl font-bold text-white mb-10">
           Сайт – это уникальная технология
         </h1>
-        <p className="mb-8 leading-relaxed text-justify text-lg md:text-xl max-w-2xl mx-auto pb-24">
+        <p className="mb-8 leading-relaxed text-justify text-lg md:text-xl sm:max-w-2xl mx-auto pb-24">
           ТЕРМИН ВЕБ-САЙТ БУДЕТ НАМ НЕСКОЛЬКО РАЗ КАЖДЫЙ ДЕНЬ. МЫ ЗНАЕМ, ЧТО ЭТО
           СЛОВО — ИНТЕРНЕТ-АДРЕС, НО ПОНЯТИЕ ВЕБ-САЙТА, ЕГО РЕАЛЬНАЯ СУТЬ, ЗАЧЕМ
           ОН НУЖЕН, ПОЧЕМУ ОН СТАНЕТ ТАК ПОПУЛЯРНЫМ И МОЖЕТ МЫ НЕ ДУМАЕМ, ЧТО
@@ -16,7 +16,7 @@ const Products = observer(() => {
         <h2 className="text-3xl text-center md:text-6xl font-bold text-white mb-10">
           ДЛЯ ЧЕГО НУЖЕН САЙТ?
         </h2>
-        <p className="leading-relaxed text-justify text-lg md:text-xl max-w-2xl mx-auto">
+        <p className="leading-relaxed text-justify text-lg md:text-xl sm:max-w-2xl mx-auto">
           В настоящее время собственные сайты имеют частные лица, компании и
           организации, оказывающие услуги клиентам и предлагающие свою
           продукцию. Итак, зачем вам сайт для них? Предоставляет подробную

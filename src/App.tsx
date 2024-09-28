@@ -14,12 +14,13 @@ const App = observer(() => {
     <>
       <Header />
       <Home />
-      <SwiperComponent />
-      <ServiceComponent />
-      <Portfolio />
       <WhoWe />
+      <SwiperComponent />
+      <div className={"py-14 bg-[#000806]"}></div>
       <AcademyInterested />
       <Trust />
+      <Portfolio />
+      <ServiceComponent />
       <Products />
       {/*<BizHaqimizda />*/}
     </>

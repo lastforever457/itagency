@@ -56,7 +56,7 @@ function Portfolio() {
       className="px-5 md:px-10 lg:px-20 bg-[#000806] flex items-center justify-between gap-48 pt-24 pb-20"
     >
       <Row>
-        <Col xs={24} md={24} lg={12} xl={12}>
+        <Col xs={24} md={24} lg={8} xl={8}>
           <div data-aos="fade-right">
             <h1 className="text-4xl text-white font-bold mb-6">ПОРТФОЛИО</h1>
             <p className="text-white mb-6">
@@ -75,7 +75,7 @@ function Portfolio() {
             </Link>
           </div>
         </Col>
-        <Col xs={24} md={24} lg={12} xl={12} className={"w-full"}>
+        <Col xs={24} md={24} lg={16} xl={16} className={"w-full"}>
           <div className="w-full flex justify-center items-center">
             <Row gutter={[16, 16]} data-aos="zoom-in" className={"w-full"}>
               {portfolioItems.map((item, index) => (

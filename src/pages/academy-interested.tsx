@@ -49,7 +49,7 @@ function AcademyInterested() {
   );
 
   return (
-    <div>
+    <div id={"trust"}>
       <div
         className={"pt-40 bg-cover bg-center bg-no-repeat object-cover"}
         style={{

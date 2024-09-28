@@ -3,7 +3,7 @@ import { Col, Row } from "antd";
 
 const WhoWe = observer(() => {
   return (
-    <div id={"trust"} className="py-5 bg-[#000806] pb-32">
+    <div id={"about-us"} className="py-5 bg-[#000806] pb-32">
       <div className="px-5 md:px-10 lg:px-20">
         <h1 className="text-white font-semibold text-3xl md:text-7xl pb-10 mt-3 mb-2 text-center">
           IT Company

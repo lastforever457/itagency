@@ -1,19 +1,22 @@
 import { observer } from "mobx-react-lite";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { AiFillPhone } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
-import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { Dropdown } from "antd";
 
 const MainHeader = observer(() => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
+  //
+  // const toggleMenu = () => {
+  //   setMenuOpen(!menuOpen);
+  // };
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
+  const scrollToSection = (e: any, id: string) => {
+    e.preventDefault();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
 
   const navbarData = useMemo(
@@ -24,26 +27,43 @@ const MainHeader = observer(() => {
       },
       {
         title: "Кто мы",
-        path: "#academy-interested",
+        path: "about-us",
       },
       {
         title: "Нам доверяют",
-        path: "#trust",
+        path: "trust",
       },
       {
         title: "Портфолио",
-        path: "#portfolio",
+        path: "portfolio",
       },
       {
         title: "Наши услуги",
-        path: "#services",
+        path: "services",
       },
       {
         title: "Контакты",
-        path: "#contacts",
+        path: "contacts",
       },
     ],
     [],
+  );
+
+  const dropdownItems = useMemo(
+    () =>
+      navbarData.map((item) => ({
+        key: item.title,
+        label: (
+          <Link
+            to={`#${item.path}`}
+            onClick={(e) => scrollToSection(e, item.path)}
+            className={`text-white hover:text-gray-300`}
+          >
+            {item.title}
+          </Link>
+        ),
+      })),
+    [navbarData],
   );
 
   return (
@@ -64,17 +84,20 @@ const MainHeader = observer(() => {
             width={30}
             alt=""
           />
-          <h3 className="text-md font-bold sm:text-xl">
-            Cloud Solutions <span className={"hidden md:flex"}>It Academy</span>
+          <h3 className="text-md font-bold sm:text-xl flex gap-2">
+            Cloud Solutions <span className={"hidden md:flex"}>IT Academy</span>
           </h3>
         </div>
 
         <div className={"flex items-center gap-4 md:hidden"}>
-          {menuOpen ? (
-            <MdClose className="text-2xl cursor-pointer" onClick={toggleMenu} />
-          ) : (
-            <FaBars className="text-2xl cursor-pointer" onClick={toggleMenu} />
-          )}
+          <Dropdown menu={{ items: dropdownItems }}>
+            <FaBars className="text-2xl cursor-pointer" />
+          </Dropdown>
+          {/*{menuOpen ? (*/}
+          {/*  <MdClose className="text-2xl cursor-pointer" onClick={toggleMenu} />*/}
+          {/*) : (*/}
+          {/*  <FaBars className="text-2xl cursor-pointer" onClick={toggleMenu} />*/}
+          {/*)}*/}
           <Link to={"tel:+998903517261"}>
             <AiFillPhone
               className="text-2xl cursor-pointer text-green-500"
@@ -85,7 +108,11 @@ const MainHeader = observer(() => {
 
         <div className={"hidden md:flex items-center md:gap-5"}>
           {navbarData.map((item) => (
-            <Link key={item.path} to={item.path}>
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={(e) => scrollToSection(e, item.path)}
+            >
               <h3
                 className={`text-sm sm:text-base font-medium cursor-pointer hover:text-green-600 transition-all duration-300`}
               >
@@ -101,29 +128,29 @@ const MainHeader = observer(() => {
         </div>
       </div>
 
-      {menuOpen && (
-        <div className="md:hidden bg-black text-white w-[100%] h-screen text-center px-4 py-4 space-y-6 flex flex-col items-center justify-center">
-          <div className="flex flex-col items-center justify-center gap-5">
-            {navbarData.map((item) => (
-              <Link key={item.path} to={item.path}>
-                <h3
-                  className={
-                    "hover:cursor-pointer transition-all duration-300 transform hover:scale-105 hover:border-b-4 hover:border-yellow-400 text-[16px]"
-                  }
-                  onClick={closeMenu}
-                >
-                  <span className="text-3xl relative hover:border-2-yellow-400 font-bold">
-                    {item.title}
-                  </span>
-                </h3>
-              </Link>
-            ))}
-          </div>
-          <h2 className={"text-4xl text-center text-amber-400 font-bold pt-40"}>
-            Мы заботимся о ваших ИТ-целях!
-          </h2>
-        </div>
-      )}
+      {/*{menuOpen && (*/}
+      {/*  <div className="md:hidden bg-black text-white w-[100%] h-screen text-center px-4 py-4 space-y-6 flex flex-col items-center justify-center">*/}
+      {/*    <div className="flex flex-col items-center justify-center gap-5">*/}
+      {/*      {navbarData.map((item) => (*/}
+      {/*        <Link key={item.path} to={item.path}>*/}
+      {/*          <h3*/}
+      {/*            className={*/}
+      {/*              "hover:cursor-pointer transition-all duration-300 transform hover:scale-105 hover:border-b-4 hover:border-yellow-400 text-[16px]"*/}
+      {/*            }*/}
+      {/*            onClick={closeMenu}*/}
+      {/*          >*/}
+      {/*            <span className="text-3xl relative hover:border-2-yellow-400 font-bold">*/}
+      {/*              {item.title}*/}
+      {/*            </span>*/}
+      {/*          </h3>*/}
+      {/*        </Link>*/}
+      {/*      ))}*/}
+      {/*    </div>*/}
+      {/*    <h2 className={"text-4xl text-center text-amber-400 font-bold pt-40"}>*/}
+      {/*      Мы заботимся о ваших ИТ-целях!*/}
+      {/*    </h2>*/}
+      {/*  </div>*/}
+      {/*)}*/}
     </header>
   );
 });
