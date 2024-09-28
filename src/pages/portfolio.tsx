@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Card, Col, Row } from "antd";
 import { Link } from "react-router-dom";
 
 const portfolioItems = [
@@ -52,8 +52,8 @@ const portfolioItems = [
 function Portfolio() {
   return (
     <div
-      id="portfolio"
-      className="py-8 mx-auto md:px-10 lg:px-20 bg-[#000806] flex items-center justify-between gap-48 pt-24 pb-20"
+      id={"portfolio"}
+      className="px-5 md:px-10 lg:px-20 bg-[#000806] flex items-center justify-between gap-48 pt-24 pb-20"
     >
       <Row>
         <Col xs={24} md={24} lg={12} xl={12}>
@@ -75,26 +75,42 @@ function Portfolio() {
             </Link>
           </div>
         </Col>
-        <Col xs={24} md={24} lg={12} xl={12}>
-          <Row gutter={[32, 32]} data-aos="zoom-in">
-            {portfolioItems.map((item, index) => (
-              <Col key={index} xs={24} sm={24} md={8} lg={8}>
-                <div className="relative">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-[300px] h-[200px] object-cover bg-contain bg-center rounded-lg hover:scale-105"
-                  />
-                  <div className="w-full absolute bottom-0 left-0 px-3 bg-black bg-opacity-50 flex flex-col gap-2 min-h-[30px] max-h-[100px] text-[12px]">
-                    <h3 className="text-white text-[12px] mt-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-300">{item.description}</p>
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
+        <Col xs={24} md={24} lg={12} xl={12} className={"w-full"}>
+          <div className="w-full flex justify-center items-center">
+            <Row gutter={[16, 16]} data-aos="zoom-in" className={"w-full"}>
+              {portfolioItems.map((item, index) => (
+                <Col
+                  key={index}
+                  xs={24}
+                  sm={24}
+                  md={8}
+                  lg={8}
+                  className={"w-full"}
+                >
+                  <Card
+                    hoverable
+                    cover={
+                      <img
+                        className={"md:min-h-[300px] bg-contain bg-center"}
+                        style={{
+                          objectFit: "contain",
+                          backgroundSize: "cover",
+                        }}
+                        src={item.img}
+                        alt={item.title}
+                      />
+                    }
+                  >
+                    <Card.Meta
+                      className={"p-0"}
+                      title={item.title}
+                      description={item.description}
+                    />
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </div>
         </Col>
       </Row>
     </div>

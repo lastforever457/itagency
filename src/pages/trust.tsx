@@ -4,7 +4,7 @@ import trustCardBg from "../../public/trust-card-bg.png";
 
 const Trust = observer(() => {
   return (
-    <div id={"trust"} className={"px-5  bg-[#000806] text-white"}>
+    <div id={"trust"} className={"bg-[#000806] text-white"}>
       <div className="px-5 md:px-10 lg:px-20">
         <p className={"text-center text-3xl font-bold mb-4"}>
           {"CLOUD SOLUTIONS"}

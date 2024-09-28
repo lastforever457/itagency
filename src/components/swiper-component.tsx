@@ -4,6 +4,7 @@ import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
 import { observer } from "mobx-react-lite";
 import { useMemo } from "react";
+import { Image } from "antd";
 
 const SwiperComponent = observer(() => {
   SwiperCore.use([Autoplay]);
@@ -65,8 +66,10 @@ const SwiperComponent = observer(() => {
       {imageLinks.map((link, index) => (
         <SwiperSlide key={index}>
           <div className="w-[100%] h-[200px] object-cover rounded-2xl overflow-hidden flex justify-center items-center p-5">
-            <img
-              className={"w-full h-full rounded-2xl bg-center bg-cover"}
+            <Image
+              className={
+                "w-full h-full rounded-2xl bg-center bg-cover object-cover"
+              }
               src={link}
               alt="Image 1"
             />

@@ -1,6 +1,7 @@
 import { FaBullhorn, FaCogs, FaDesktop } from "react-icons/fa";
 import { IoMdRainy } from "react-icons/io";
 import { SiRadar } from "react-icons/si";
+import { Col, Row } from "antd";
 
 interface ServiceProps {
   id: number;
@@ -80,37 +81,38 @@ function ServiceComponent() {
   ];
 
   return (
-    <section id={"services"} className="bg-black text-white py-12">
-      <div className="py-5 px-10 mx-auto">
-        <h2
-          data-aos={"zoom-in"}
-          className="text-4xl py-5 px-10 sm:text-center font-bold mt-10 mb-8"
-        >
-          Технологии «Cloud Solutions»
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+    <section
+      id={"services"}
+      className="bg-black text-white py-12 px-5 md:px-10 lg:px-20"
+    >
+      <h2
+        data-aos={"zoom-in"}
+        className="text-4xl text-center font-bold mt-10 mb-8"
+      >
+        Технологии «Cloud Solutions»
+      </h2>
+      <div className="gap-10">
+        <Row gutter={[25, 55]}>
           {services.map((service) => (
-            <div
-              data-aos={"zoom-in"}
-              key={service.id}
-              className="flex py-5 px-20 gap-2"
-            >
-              <div className="flex gap-1">
-                <span className={"text-amber-400 font-bold text-2xl"}>
-                  {service.id}
-                </span>
-                <hr className="w-10 h-0.5 mt-4 mb-5 bg-amber-400" />
+            <Col key={service.id} xs={24} sm={24} md={8} lg={6}>
+              <div data-aos={"zoom-in"} key={service.id} className="flex gap-2">
+                <div className="flex gap-1">
+                  <span className={"text-amber-400 font-bold text-2xl"}>
+                    {service.id}
+                  </span>
+                  <hr className="w-10 h-0.5 mt-4 mb-5 bg-amber-400" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <span>{service.icon}</span>
+                  <h3 className="text-xl font-semibold text-amber-400 ">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-amber-400">{service.description}</p>
+                </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <span>{service.icon}</span>
-                <h3 className="text-xl font-semibold text-amber-400 ">
-                  {service.title}
-                </h3>
-                <p className="mt-2 text-amber-400">{service.description}</p>
-              </div>
-            </div>
+            </Col>
           ))}
-        </div>
+        </Row>
       </div>
     </section>
   );

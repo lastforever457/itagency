@@ -64,8 +64,8 @@ const MainHeader = observer(() => {
             width={30}
             alt=""
           />
-          <h3 className="text-lg font-bold sm:text-xl">
-            Cloud Solutions It Academy
+          <h3 className="text-md font-bold sm:text-xl">
+            Cloud Solutions <span className={"hidden md:flex"}>It Academy</span>
           </h3>
         </div>
 

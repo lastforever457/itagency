@@ -11,7 +11,7 @@ const Home = observer(() => {
           muted
           loop
           id="myVideo"
-          className="absolute w-[100%]  bg-cover bg-center object-cover min-h-[100vh] -z-10"
+          className=" w-[100%] fixed bg-cover bg-center object-cover min-h-[100vh] -z-10"
         >
           <source src="/main-video.mp4" type="video/mp4" />
         </video>
