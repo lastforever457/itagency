@@ -8,6 +8,7 @@ import Trust from "./pages/trust.tsx";
 import SwiperComponent from "./components/swiper-component.tsx";
 import ServiceComponent from "./components/services.tsx";
 import Portfolio from "./pages/portfolio.tsx";
+import Contacts from "./pages/contacts.tsx";
 
 const App = observer(() => {
   return (
@@ -22,6 +23,7 @@ const App = observer(() => {
       <Portfolio />
       <ServiceComponent />
       <Products />
+      <Contacts />
       {/*<BizHaqimizda />*/}
     </>
   );
