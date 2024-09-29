@@ -11,7 +11,7 @@ const Trust = observer(() => {
         </p>
         <Row gutter={[30, 30]}>
           <Col xs={24} sm={24} md={18} lg={16} xl={16}>
-            <p className={"text-2xl text-justify content-center mb-3"}>
+            <p className={"md:text-2xl text-justify mb-3"}>
               Начала свою деятельность в качестве IT-интегратора, установив
               партнерские отношения с такими компаниями, как «Green White
               Solutions» (ПО Smartup & Verifix-HR), зарубежной IT-компанией «Abm

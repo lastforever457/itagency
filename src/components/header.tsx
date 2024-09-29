@@ -89,7 +89,7 @@ const MainHeader = observer(() => {
           </h3>
         </div>
 
-        <div className={"flex items-center gap-4 md:hidden"}>
+        <div className={"flex items-center gap-4 lg:hidden"}>
           <FaBars
             className="text-2xl cursor-pointer"
             onClick={() => setIsOpen(true)}
@@ -129,7 +129,7 @@ const MainHeader = observer(() => {
           </Link>
         </div>
 
-        <div className={"hidden md:flex items-center md:gap-5"}>
+        <div className={"hidden lg:flex items-center md:gap-5"}>
           {navbarData.map((item) => (
             <Link
               key={item.path}

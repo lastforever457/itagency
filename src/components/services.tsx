@@ -94,7 +94,7 @@ function ServiceComponent() {
       <div className="gap-10">
         <Row gutter={[25, 55]}>
           {services.map((service) => (
-            <Col key={service.id} xs={24} sm={24} md={8} lg={6}>
+            <Col key={service.id} xs={24} sm={24} md={8} lg={8}>
               <div data-aos={"zoom-in"} key={service.id} className="flex gap-2">
                 <div className="flex gap-1">
                   <span className={"text-amber-400 font-bold text-2xl"}>

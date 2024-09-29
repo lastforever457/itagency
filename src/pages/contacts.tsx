@@ -71,7 +71,9 @@ const Contacts = observer(() => {
           >
             <div className="flex">
               <img
-                className={"w-[60px] h-[60px] bg-[#16A34A] rounded-full p-3"}
+                className={
+                  "w-[45px] h-[45px] md:w-[60px] md:h-[60px] bg-[#16A34A] rounded-full p-3"
+                }
                 src="https://img.icons8.com/?size=50&id=7880&format=png&color=ffffff"
                 alt=""
               />
@@ -89,7 +91,9 @@ const Contacts = observer(() => {
           >
             <div className="flex">
               <img
-                className={"w-[60px] h-[60px] bg-[#16A34A] rounded-full p-3"}
+                className={
+                  "w-[45px] h-[45px] md:w-[60px] md:h-[60px] bg-[#16A34A] rounded-full p-3"
+                }
                 src="https://img.icons8.com/?size=50&id=9730&format=png&color=ffffff"
                 alt=""
               />
@@ -112,7 +116,9 @@ const Contacts = observer(() => {
           >
             <div className="flex">
               <img
-                className={"w-[60px] h-[60px] bg-[#16A34A] rounded-full p-3"}
+                className={
+                  "w-[45px] h-[45px] md:w-[60px] md:h-[60px] bg-[#16A34A] rounded-full p-3"
+                }
                 src="https://img.icons8.com/?size=50&id=lUktdBVdL4Kb&format=png&color=ffffff"
                 alt=""
               />
@@ -135,7 +141,9 @@ const Contacts = observer(() => {
           >
             <div className="flex">
               <img
-                className={"w-[60px] h-[60px] bg-[#16A34A] rounded-full p-3"}
+                className={
+                  "w-[45px] h-[45px] md:w-[60px] md:h-[60px] bg-[#16A34A] rounded-full p-3"
+                }
                 src="https://img.icons8.com/?size=50&id=16733&format=png&color=ffffff"
                 alt=""
               />
@@ -155,7 +163,9 @@ const Contacts = observer(() => {
           >
             <div className="flex">
               <img
-                className={"w-[60px] h-[60px] bg-[#16A34A] rounded-full p-3"}
+                className={
+                  "w-[45px] h-[45px] md:w-[60px] md:h-[60px] bg-[#16A34A] rounded-full p-3"
+                }
                 src="https://img.icons8.com/?size=50&id=12623&format=png&color=ffffff"
                 alt=""
               />
