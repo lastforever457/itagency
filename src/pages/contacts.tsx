@@ -86,6 +86,7 @@ const Contacts = observer(() => {
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <div
+            data-aos="fade-up-right"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
             style={{ backgroundImage: `url("/trust-card-bg.png")` }}
           >
@@ -111,6 +112,7 @@ const Contacts = observer(() => {
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <div
+            data-aos="fade-up-left"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
             style={{ backgroundImage: `url("/trust-card-bg.png")` }}
           >
@@ -136,6 +138,7 @@ const Contacts = observer(() => {
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <div
+            data-aos="fade-up-right"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
             style={{ backgroundImage: `url("/trust-card-bg.png")` }}
           >
@@ -158,6 +161,7 @@ const Contacts = observer(() => {
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <div
+            data-aos="fade-up-left"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
             style={{ backgroundImage: `url("/trust-card-bg.png")` }}
           >
@@ -178,6 +182,7 @@ const Contacts = observer(() => {
         </Col>
         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
           <div
+            data-aos="flip-up"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
             style={{ backgroundImage: `url("/trust-card-bg.png")` }}
           >

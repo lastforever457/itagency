@@ -15,12 +15,6 @@ const Home = observer(() => {
         >
           <source src="/main-video.mp4" type="video/mp4" />
         </video>
-        {/*<Link*/}
-        {/*  target={"_blank"}*/}
-        {/*  to={*/}
-        {/*    "https://www.google.com/maps/place/41%C2%B020'55.5%22N+69%C2%B020'14.4%22E/@41.348747,69.337344,16z/data=!4m4!3m3!8m2!3d41.348747!4d69.337344?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D"*/}
-        {/*  }*/}
-        {/*>*/}
         <div
           data-aos="fade-right"
           className={`px-5 md:px-10 lg:px-20 text-white w-[100%] min-h-[100vh] flex flex-col justify-center gap-3`}
@@ -42,9 +36,7 @@ const Home = observer(() => {
             </button>
           </Link>
         </div>
-        {/*</Link>*/}
       </div>
-      {/*<Contact />*/}
     </div>
   );
 });

@@ -9,8 +9,23 @@ import SwiperComponent from "./components/swiper-component.tsx";
 import ServiceComponent from "./components/services.tsx";
 import Portfolio from "./pages/portfolio.tsx";
 import Contacts from "./pages/contacts.tsx";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import CustomFooter from "./components/footer.tsx";
 
 const App = observer(() => {
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 600,
+      easing: "ease-in-out",
+      delay: 100,
+      once: true,
+      mirror: true,
+    });
+  });
+
   return (
     <>
       <Header />
@@ -24,7 +39,7 @@ const App = observer(() => {
       <ServiceComponent />
       <Products />
       <Contacts />
-      {/*<BizHaqimizda />*/}
+      <CustomFooter />
     </>
   );
 });

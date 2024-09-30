@@ -3,13 +3,13 @@ import { Col, Row } from "antd";
 
 const WhoWe = observer(() => {
   return (
-    <div id={"about-us"} className="py-5 bg-[#000806] pb-32">
+    <div id={"about-us"} className="py-5 bg-[#000806] pb-32 w-full">
       <div className="px-5 md:px-10 lg:px-20">
         <h1 className="text-white font-semibold text-3xl md:text-7xl pb-10 mt-3 mb-2 text-center">
           IT Company
         </h1>
         <Row gutter={[30, 30]}>
-          <Col data-aos="zoom-on" xs={24} sm={24} md={12} lg={12} xl={12}>
+          <Col data-aos="fade-right" xs={24} sm={24} md={12} lg={12} xl={12}>
             <img
               src="https://mybayutcdn.bayut.com/mybayut/wp-content/uploads/Business-Setup-Consultant-in-Dubai-_-Cover-21-2-23.jpg"
               alt=""

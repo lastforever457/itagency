@@ -1,49 +1,21 @@
 import { observer } from "mobx-react-lite";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { AiFillPhone } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Drawer, Menu } from "antd";
+import useHeaderMenus from "../hooks/use-header-menus.tsx";
 
 const MainHeader = observer(() => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { navbarData } = useHeaderMenus();
 
-  const scrollToSection = (e: any, id: string) => {
+  const scrollToSection = useCallback((e: any, id: string) => {
     e.preventDefault();
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-  };
-
-  const navbarData = useMemo(
-    () => [
-      {
-        title: "Главное меню",
-        path: "#",
-      },
-      {
-        title: "Кто мы",
-        path: "about-us",
-      },
-      {
-        title: "Нам доверяют",
-        path: "trust",
-      },
-      {
-        title: "Портфолио",
-        path: "portfolio",
-      },
-      {
-        title: "Наши услуги",
-        path: "services",
-      },
-      {
-        title: "Контакты",
-        path: "contacts",
-      },
-    ],
-    [],
-  );
+  }, []);
 
   const menuItems = useMemo(
     () =>
