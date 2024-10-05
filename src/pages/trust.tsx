@@ -34,7 +34,7 @@ const Trust = observer(() => {
               style={{ backgroundImage: `url(${trustCardBg})` }}
             >
               <div className="text-center">
-                <p className={"text-xl"}>Успешных проектов</p>
+                <p className={"text-xl"}>Успешных проекты</p>
               </div>
               <div className="flex gap-2">
                 <div className="flex justify-center items-center w-full h-full gap-2">
@@ -56,7 +56,7 @@ const Trust = observer(() => {
               style={{ backgroundImage: `url(${trustCardBg})` }}
             >
               <div className="text-center">
-                <p className={"text-xl"}>Специалистом</p>
+                <p className={"text-xl"}>Специалисты</p>
               </div>
               <div className="flex gap-2">
                 <div className="flex justify-center items-center w-full h-full gap-2">
@@ -100,7 +100,7 @@ const Trust = observer(() => {
               style={{ backgroundImage: `url(${trustCardBg})` }}
             >
               <div className="text-center">
-                <p className={"text-xl"}>Опыт направлениях</p>
+                <p className={"text-xl"}>Опыт по направлениям</p>
               </div>
               <div className="flex gap-2">
                 <div className="flex justify-center items-center w-full h-full gap-2">

@@ -57,7 +57,7 @@ const MainHeader = observer(() => {
             alt=""
           />
           <h3 className="text-md font-bold sm:text-xl flex gap-2">
-            Cloud Solutions <span className={"hidden md:flex"}>IT Academy</span>
+            Cloud Solutions <span className={"hidden md:flex"}>IT Company</span>
           </h3>
         </div>
 

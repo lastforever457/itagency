@@ -73,10 +73,10 @@ function AcademyInterested() {
             {texts.map((text) => (
               <Col key={text.id} xs={24} sm={24} md={8} lg={6}>
                 <div className="flex items-center space-x-4 cursor-pointer">
-                  <h1 className="text-4xl font-bold text-amber-600">
+                  <h1 className="text-4xl font-bold text-green-500">
                     {text.id}
                   </h1>
-                  <span className="font-bold text-left text-amber-600 hover:underline">
+                  <span className="font-bold text-left text-green-100 hover:underline">
                     {text.title}
                   </span>
                 </div>

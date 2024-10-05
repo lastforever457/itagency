@@ -130,7 +130,7 @@ const Contacts = observer(() => {
               <p className={"flex gap-2 justify-center items-center"}>
                 +998 90 351 72 61{" "}
                 <Link to={"https://t.me/Mirkamol_Kodirov"} target={"_blank"}>
-                  <Button>Вход</Button>
+                  <Button>Связаться</Button>
                 </Link>
               </p>
             </div>
