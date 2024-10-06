@@ -109,7 +109,7 @@ const MainHeader = observer(() => {
               onClick={(e) => scrollToSection(e, item.path)}
             >
               <h3
-                className={`text-sm sm:text-base font-medium cursor-pointer hover:text-green-600 transition-all duration-300`}
+                className={`text-base md:text-md font-medium cursor-pointer hover:text-green-600 transition-all duration-300`}
               >
                 {item.title}
               </h3>

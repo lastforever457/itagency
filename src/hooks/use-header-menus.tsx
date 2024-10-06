@@ -12,16 +12,20 @@ const useHeaderMenus = () => {
         path: "about-us",
       },
       {
-        title: "Нам доверяют",
-        path: "trust",
-      },
-      {
         title: "Портфолио",
         path: "portfolio",
       },
       {
         title: "Наши услуги",
         path: "services",
+      },
+      {
+        title: "Партнёрство",
+        path: "partnership",
+      },
+      {
+        title: "Инвесторам",
+        path: "investors",
       },
       {
         title: "Контакты",

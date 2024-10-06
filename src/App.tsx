@@ -1,9 +1,7 @@
 import { observer } from "mobx-react-lite";
 import Home from "./pages/home.tsx";
 import Header from "./components/header.tsx";
-import AcademyInterested from "./pages/academy-interested.tsx";
 import WhoWe from "./pages/who-we.tsx";
-import Products from "./pages/products.tsx";
 import Trust from "./pages/trust.tsx";
 import SwiperComponent from "./components/swiper-component.tsx";
 import ServiceComponent from "./components/services.tsx";
@@ -13,6 +11,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import CustomFooter from "./components/footer.tsx";
+import Investment from "./pages/investment.tsx";
+import Partnership from "./pages/partnership.tsx";
 
 const App = observer(() => {
   useEffect(() => {
@@ -33,11 +33,13 @@ const App = observer(() => {
       <WhoWe />
       <SwiperComponent />
       <div className={"py-14 bg-[#000806]"}></div>
-      <AcademyInterested />
+      {/*<AcademyInterested />*/}
       <Trust />
       <Portfolio />
       <ServiceComponent />
-      <Products />
+      {/*<Products />*/}
+      <Partnership />
+      <Investment />
       <Contacts />
       <CustomFooter />
     </>
