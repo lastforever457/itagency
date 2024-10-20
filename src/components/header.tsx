@@ -3,12 +3,29 @@ import { useCallback, useMemo, useState } from "react";
 import { AiFillPhone } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Drawer, Menu } from "antd";
+import { Menu, Dropdown, Button, Drawer } from "antd";
+import { DownOutlined } from "@ant-design/icons";
 import useHeaderMenus from "../hooks/use-header-menus.tsx";
+import { useTranslation } from "react-i18next";
 
 const MainHeader = observer(() => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { navbarData } = useHeaderMenus();
+
+  const { i18n } = useTranslation();
+
+  const handleMenuClick = (e: any) => {
+    const selectedLanguage = e.key;
+    i18n.changeLanguage(selectedLanguage);
+    localStorage.setItem("language", selectedLanguage);
+  };
+
+  const menu = (
+    <Menu onClick={handleMenuClick}>
+      <Menu.Item key="ru">Русский</Menu.Item>
+      <Menu.Item key="en">English</Menu.Item>
+    </Menu>
+  );
 
   const scrollToSection = useCallback((e: any, id: string) => {
     e.preventDefault();
@@ -35,7 +52,7 @@ const MainHeader = observer(() => {
           ),
         };
       }),
-    [navbarData],
+    [navbarData, scrollToSection],
   );
 
   return (
@@ -52,7 +69,7 @@ const MainHeader = observer(() => {
         <div className={"flex items-center gap-2"}>
           <img
             style={{ filter: "drop-shadow(5px 5px 30px cyan)" }}
-            src="/vector-icon.svg"
+            src="/images/vector-icon.svg"
             width={30}
             alt=""
           />
@@ -69,7 +86,7 @@ const MainHeader = observer(() => {
           <Drawer
             title={
               <div className={"w-full flex items-center gap-2"}>
-                <img src="/vector-icon.svg" width={30} alt="" />
+                <img src="/images/vector-icon.svg" width={30} alt="" />
                 <h3 className="text-md font-bold sm:text-xl flex gap-2">
                   Cloud Solutions{" "}
                   <span className={"hidden md:flex"}>IT Academy</span>
@@ -115,6 +132,15 @@ const MainHeader = observer(() => {
               </h3>
             </Link>
           ))}
+          <Dropdown overlay={menu} trigger={["click"]}>
+            <Button
+              style={{ background: "transparent" }}
+              className="flex items-center px-2 py-0 bg-transparent text-white rounded hover:bg-blue-600"
+            >
+              {i18n.language === "en" ? "ENG" : "РУС"}
+              <DownOutlined className="" />
+            </Button>
+          </Dropdown>
           <div className={"bg-green-600 py-1 px-1 rounded-xl cursor-pointer"}>
             <Link to={"tel:+998903517261"}>
               <AiFillPhone />

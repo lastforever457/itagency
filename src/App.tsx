@@ -25,7 +25,6 @@ const App = observer(() => {
       mirror: true,
     });
   });
-
   return (
     <>
       <Header />

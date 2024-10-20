@@ -70,7 +70,7 @@ const BizHaqimizda = observer(() => {
             <Col xs={24} sm={12} md={12} lg={8}>
               <div className={`my-5 md:my-10 lg:my-20`}>
                 <h2 className={"text-3xl mb-3"}>СЕРТИФИКАТ ЧЛЕНСТВА</h2>
-                <img src="/image.svg" alt="" />
+                <img src="/images/image.svg" alt="" />
               </div>
             </Col>
             <Col xs={24} sm={12} md={12} lg={8}>

@@ -14,8 +14,10 @@ import { Button, Col, Divider, Form, Input, Row } from "antd";
 import { Link } from "react-router-dom";
 import TextArea from "antd/es/input/TextArea";
 import { observer } from "mobx-react-lite";
+import { useTranslation } from "react-i18next";
 
 const Contacts = observer(() => {
+  const { t } = useTranslation();
   const position: [number, number] = useMemo(() => [69.188222, 41.272833], []);
   const [form] = Form.useForm();
 
@@ -57,7 +59,9 @@ const Contacts = observer(() => {
       className={"px-5 md:px-10 lg:px-20 bg-[#000806] text-white py-10"}
     >
       <Divider />
-      <h1 className={"font-semibold text-3xl text-center mb-5"}>Контакты</h1>
+      <h1 className={"font-semibold text-3xl text-center mb-5"}>
+        {t("contacts")}
+      </h1>
       <Row gutter={[30, 30]}>
         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
           <div className="rounded-2xl overflow-hidden">
@@ -67,7 +71,7 @@ const Contacts = observer(() => {
         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
           <div
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
-            style={{ backgroundImage: `url("/trust-card-bg.png")` }}
+            style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >
             <div className="flex">
               <img
@@ -79,8 +83,8 @@ const Contacts = observer(() => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <p className={"text-xl"}>Адрес</p>
-              <p className={""}>г. Ташкент, улица Катортол 2, дом 23</p>
+              <p className={"text-xl"}>{t("address")}</p>
+              <p className={""}>{t("address desc")}</p>
             </div>
           </div>
         </Col>
@@ -88,7 +92,7 @@ const Contacts = observer(() => {
           <div
             data-aos="fade-up-right"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
-            style={{ backgroundImage: `url("/trust-card-bg.png")` }}
+            style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >
             <div className="flex">
               <img
@@ -100,11 +104,11 @@ const Contacts = observer(() => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <p className={"text-xl"}>Телефон</p>
+              <p className={"text-xl"}>{t("phone")}</p>
               <p className={"flex gap-2 justify-center items-center"}>
                 +998 90 351 72 61{" "}
                 <Link to={"tel:+998903517261"} target={"_blank"}>
-                  <Button>Позвонить</Button>
+                  <Button className={"capitalize"}>{t("call")}</Button>
                 </Link>
               </p>
             </div>
@@ -114,7 +118,7 @@ const Contacts = observer(() => {
           <div
             data-aos="fade-up-left"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
-            style={{ backgroundImage: `url("/trust-card-bg.png")` }}
+            style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >
             <div className="flex">
               <img
@@ -126,11 +130,11 @@ const Contacts = observer(() => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <p className={"text-xl"}>Телеграм</p>
+              <p className={"text-xl"}>{t("telegram")}</p>
               <p className={"flex gap-2 justify-center items-center"}>
                 +998 90 351 72 61{" "}
                 <Link to={"https://t.me/Mirkamol_Kodirov"} target={"_blank"}>
-                  <Button>Связаться</Button>
+                  <Button>{t("boglanish")}</Button>
                 </Link>
               </p>
             </div>
@@ -140,7 +144,7 @@ const Contacts = observer(() => {
           <div
             data-aos="fade-up-right"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
-            style={{ backgroundImage: `url("/trust-card-bg.png")` }}
+            style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >
             <div className="flex">
               <img
@@ -163,7 +167,7 @@ const Contacts = observer(() => {
           <div
             data-aos="fade-up-left"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
-            style={{ backgroundImage: `url("/trust-card-bg.png")` }}
+            style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >
             <div className="flex">
               <img
@@ -175,7 +179,7 @@ const Contacts = observer(() => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <p className={"text-xl"}>Электронная почта</p>
+              <p className={"text-xl"}>{t("electronic mail")}</p>
               <p className={""}>info@cloud-solutions.uz</p>
             </div>
           </div>
@@ -184,31 +188,43 @@ const Contacts = observer(() => {
           <div
             data-aos="flip-up"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
-            style={{ backgroundImage: `url("/trust-card-bg.png")` }}
+            style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >
             <Form form={form} className={"w-full"}>
               <Row gutter={[30, 0]}>
                 <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                  <Form.Item rules={[{ required: true }]} name={"name"}>
-                    <Input className="py-2" placeholder="Имя" />
+                  <Form.Item
+                    rules={[{ required: true, message: t("name error") }]}
+                    name={"name"}
+                  >
+                    <Input className="py-2" placeholder={t("your name")} />
                   </Form.Item>
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                  <Form.Item rules={[{ required: true }]} name={"email"}>
-                    <Input className="py-2" placeholder="Email" />
+                  <Form.Item
+                    rules={[{ required: true, message: t("email error") }]}
+                    name={"email"}
+                  >
+                    <Input className="py-2" placeholder={t("your email")} />
                   </Form.Item>
                 </Col>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                  <Form.Item rules={[{ required: true }]} name={"theme"}>
-                    <Input className="py-2" placeholder="Тема" />
+                  <Form.Item
+                    rules={[{ required: true, message: t("subject error") }]}
+                    name={"theme"}
+                  >
+                    <Input className="py-2" placeholder={t("theme")} />
                   </Form.Item>
                 </Col>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                  <Form.Item rules={[{ required: true }]} name={"message"}>
+                  <Form.Item
+                    rules={[{ required: true, message: t("message error") }]}
+                    name={"message"}
+                  >
                     <TextArea
                       className="py-2"
                       rows={5}
-                      placeholder="Сообщение"
+                      placeholder={t("message")}
                     />
                   </Form.Item>
                 </Col>
@@ -219,7 +235,7 @@ const Contacts = observer(() => {
                       type={"primary"}
                       className={""}
                     >
-                      Отправить
+                      {t("send 2")}
                     </Button>
                   </div>
                 </Col>

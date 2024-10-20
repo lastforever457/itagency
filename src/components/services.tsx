@@ -2,83 +2,77 @@ import { FaBullhorn, FaCogs, FaDesktop } from "react-icons/fa";
 import { IoMdRainy } from "react-icons/io";
 import { SiRadar } from "react-icons/si";
 import { Col, Row } from "antd";
-
-interface ServiceProps {
-  id: number;
-  title: string;
-  description: string;
-  icon: JSX.Element;
-}
+import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 
 function ServiceComponent() {
-  const services: ServiceProps[] = [
-    {
-      id: 1,
-      title: "Создать сайт",
-      description:
-        "Мы создаем сайт любой необходимой вам сложности, используя лучшие языки программирования сайтов, и помогаем быстро реализовать ваш идеал.",
-      icon: (
-        <FaDesktop
-          className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
-        />
-      ),
-    },
-    {
-      id: 2,
-      title: "Создать мобильное приложение",
-      description:
-        "Мы создаем мобильные приложения вашего сайта быстро и качественно, используя инновационные технологии для реализации идей наших клиентов.",
-      icon: (
-        <FaBullhorn
-          className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
-        />
-      ),
-    },
-    {
-      id: 3,
-      title: "Создание CRM-системы",
-      description:
-        "Создание системы, которая используется для дальнейшего развития взаимоотношений между сотрудниками компании и клиентами.",
-      icon: (
-        <FaDesktop
-          className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
-        />
-      ),
-    },
-    {
-      id: 4,
-      title: "Oтдел продаж",
-      description:
-        "Хотите вывести свой онлайн-бизнес на более брендовый уровень? Как насчет привлечения большего количества клиентов? Тогда мы предлагаем вам нашу идеальную и привлекательную услугу по рисованию дизайна.",
-      icon: (
-        <IoMdRainy
-          className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
-        />
-      ),
-    },
-    {
-      id: 5,
-      title: "СММ",
-      description:
-        "Это улучшение коммуникации с пользователями Интернета, представление бренда продукта и привлечение большего количества потенциальных клиентов в интернет-магазин или другой вид бизнеса за счет качественного контента в SMM-постах.",
-      icon: (
-        <SiRadar
-          className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
-        />
-      ),
-    },
-    {
-      id: 6,
-      title: "Технические услуги",
-      description:
-        "Подключение к платежным системам, интеграции, работа с серверным хостингом. Неважно, пользуются ли они каким-либо видом услуг, мы предоставляем техническое обслуживание каждому клиенту, который выбирает нас.",
-      icon: (
-        <FaCogs
-          className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
-        />
-      ),
-    },
-  ];
+  const { t } = useTranslation();
+
+  const services = useMemo(
+    () => [
+      {
+        id: 1,
+        title: t("create site"),
+        description: t("create site desc"),
+        icon: (
+          <FaDesktop
+            className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
+          />
+        ),
+      },
+      {
+        id: 2,
+        title: t("create mobile app"),
+        description: t("create mobile app desc"),
+        icon: (
+          <FaBullhorn
+            className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
+          />
+        ),
+      },
+      {
+        id: 3,
+        title: t("create CRM"),
+        description: t("create CRM desc"),
+        icon: (
+          <FaDesktop
+            className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
+          />
+        ),
+      },
+      {
+        id: 4,
+        title: t("sales"),
+        description: t("sales desc"),
+        icon: (
+          <IoMdRainy
+            className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
+          />
+        ),
+      },
+      {
+        id: 5,
+        title: "СММ",
+        description: t("cmm desc"),
+        icon: (
+          <SiRadar
+            className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
+          />
+        ),
+      },
+      {
+        id: 6,
+        title: t("technical services"),
+        description: t("tech desc"),
+        icon: (
+          <FaCogs
+            className={"bg-amber-400 text-black py-1 px-1 size-8 rounded-xl"}
+          />
+        ),
+      },
+    ],
+    [t],
+  );
 
   return (
     <section
@@ -89,7 +83,7 @@ function ServiceComponent() {
         data-aos={"zoom-in"}
         className="text-4xl text-center font-bold mt-10 mb-8"
       >
-        Технологии «Cloud Solutions»
+        {t("service title")}
       </h2>
       <div className="gap-10">
         <Row gutter={[25, 55]}>

@@ -5,6 +5,7 @@ import "./index.css";
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider, theme } from "antd";
+import "./i18n/i18n.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

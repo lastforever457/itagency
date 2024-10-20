@@ -4,10 +4,12 @@ import { FacebookFilled, InstagramFilled } from "@ant-design/icons";
 import useHeaderMenus from "../hooks/use-header-menus.tsx";
 import { Link } from "react-router-dom";
 import { FaTelegram } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const { Footer } = Layout;
 
 const CustomFooter = () => {
+  const { t } = useTranslation();
   const { navbarData } = useHeaderMenus();
 
   const scrollToSection = useCallback((e: any, id: string) => {
@@ -24,7 +26,7 @@ const CustomFooter = () => {
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>
             {/* Раздел "О компании" */}
             <div>
-              <h3 className="text-white text-lg mb-4">О компании</h3>
+              <h3 className="text-white text-lg mb-4">Cloud Solutions</h3>
               <ul>
                 <Row>
                   {navbarData.map((item) => (
@@ -57,14 +59,14 @@ const CustomFooter = () => {
           <Col xs={24} sm={24} md={12} lg={6} xl={6}>
             {/* Раздел "Контакты" */}
             <div>
-              <h3 className="text-white text-lg mb-4">Контакты</h3>
+              <h3 className="text-white text-lg mb-4">{t("contacts")}</h3>
               <ul>
                 <li className="mb-2">
                   <Link
                     to="mailto:info@cloud-solutions.uz"
                     className="hover:text-white"
                   >
-                    info@company.com
+                    info@cloud-solutions.uz
                   </Link>
                 </li>
                 <li className="mb-2">
@@ -84,7 +86,7 @@ const CustomFooter = () => {
           <Col xs={24} sm={24} md={12} lg={6} xl={6}>
             {/* Социальные сети */}
             <div>
-              <h3 className="text-white text-lg mb-4">Следите за нами</h3>
+              <h3 className="text-white text-lg mb-4">{t("follow")}</h3>
               <div className="flex space-x-4">
                 <Link
                   to="https://telegram.me/Mirkamol_Kodirov"
@@ -109,9 +111,7 @@ const CustomFooter = () => {
           </Col>
         </Row>
       </div>
-      <div className="text-center text-gray-500 mt-8">
-        © 2024 Cloud Solutions. Все права защищены.
-      </div>
+      <div className="text-center text-gray-500 mt-8">{t("footer")}</div>
     </Footer>
   );
 };

@@ -1,55 +1,53 @@
 import { Card, Col, Row } from "antd";
 import { Link } from "react-router-dom";
-
-const portfolioItems = [
-  {
-    img: "/picture-14.jpg",
-    title: "Avitsenna",
-    description: "Решение и внедрение системы для Фарм.",
-  },
-  {
-    img: "/picture-12.png",
-    title: "Alicafe",
-    description: "Дистрибуция и управление запасами",
-  },
-  {
-    img: "/picture-11.jpg",
-    title: "Sunlight Group",
-    description: "Делаем удобные отчеты по продажам",
-  },
-  {
-    img: "/picture-3.png",
-    title: "Lovular",
-    description: "IT и Бизнес консалтинг",
-  },
-  {
-    img: "/picture-13.png",
-    title: "Lovular",
-    description: "IT и Бизнес консалтинг",
-  },
-  {
-    img: "/picture-10.png",
-    title: "Lovular",
-    description: "IT и Бизнес консалтинг",
-  },
-  {
-    img: "/picture-2.jpg",
-    title: "Lovular",
-    description: "IT и Бизнес консалтинг",
-  },
-  {
-    img: "/picture-9.png",
-    title: "Lovular",
-    description: "IT и Бизнес консалтинг",
-  },
-  {
-    img: "/lays.png",
-    title: "Lovular",
-    description: "IT и Бизнес консалтинг",
-  },
-];
+import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 
 function Portfolio() {
+  const { t } = useTranslation();
+
+  const portfolioItems = useMemo(
+    () => [
+      {
+        img: "/images/picture-14.jpg",
+        title: "Tip Top",
+      },
+      {
+        img: "/images/picture-12.png",
+        title: "ROZMETOV",
+      },
+      {
+        img: "/images/picture-11.jpg",
+        title: "Perla",
+      },
+      {
+        img: "/images/picture-3.png",
+        title: "NT Holding",
+      },
+      {
+        img: "/images/picture-13.png",
+        title: "Serene Pharma",
+      },
+      {
+        img: "/images/picture-10.png",
+        title: "Active",
+      },
+      {
+        img: "/images/picture-2.jpg",
+        title: "Doraline & Plan Baby",
+      },
+      {
+        img: "/images/picture-9.png",
+        title: "OXY Med",
+      },
+      {
+        img: "/images/lays.png",
+        title: "Lay's",
+      },
+    ],
+    [],
+  );
+
   return (
     <div
       id={"portfolio"}
@@ -58,19 +56,18 @@ function Portfolio() {
       <Row>
         <Col xs={24} md={24} lg={8} xl={8}>
           <div data-aos="fade-right">
-            <h1 className="text-4xl text-white font-bold mb-6">ПОРТФОЛИО</h1>
-            <p className="text-white mb-6">
-              Познакомьтесь с тем, как мы решаем проблемы бизнеса на реальных
-              примерах.
-            </p>
+            <h1 className="text-4xl text-white font-bold mb-6">
+              {t("portfolio").toUpperCase()}
+            </h1>
+            <p className="text-white mb-6">{t("portfolio desc")}</p>
             <Link
               to={
                 "https://cloud-solutions.uz/assets/slides/new-sloud-solutions-corporate-presentation.pdf"
               }
               target={"_blank"}
             >
-              <button className="hover:text-black font-bold hover:bg-green-400 border border-white text-white px-5 py-2 rounded-full mb-10">
-                Все проекты
+              <button className="hover: transition-all hover:border-transparent font-bold hover:bg-green-400 border border-white text-white px-5 py-2 rounded-full mb-10">
+                {t("all projects")}
               </button>
             </Link>
           </div>
@@ -101,11 +98,7 @@ function Portfolio() {
                       />
                     }
                   >
-                    <Card.Meta
-                      className={"p-0"}
-                      title={item.title}
-                      description={item.description}
-                    />
+                    <Card.Meta className={"p-0"} title={item.title} />
                   </Card>
                 </Col>
               ))}

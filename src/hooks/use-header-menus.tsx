@@ -1,38 +1,41 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 const useHeaderMenus = () => {
+  const { t } = useTranslation();
+
   const navbarData = useMemo(
     () => [
       {
-        title: "Главное меню",
+        title: t("home page"),
         path: "#",
       },
       {
-        title: "Кто мы",
+        title: t("who we"),
         path: "about-us",
       },
       {
-        title: "Портфолио",
+        title: t("portfolio"),
         path: "portfolio",
       },
       {
-        title: "Наши услуги",
+        title: t("our services"),
         path: "services",
       },
       {
-        title: "Партнёрство",
+        title: t("partnership"),
         path: "partnership",
       },
       {
-        title: "Инвесторам",
+        title: t("investors"),
         path: "investors",
       },
       {
-        title: "Контакты",
+        title: t("contacts"),
         path: "contacts",
       },
     ],
-    [],
+    [t],
   );
 
   return { navbarData };

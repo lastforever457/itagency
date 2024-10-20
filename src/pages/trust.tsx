@@ -1,8 +1,11 @@
 import { observer } from "mobx-react-lite";
 import { Col, Divider, Image, Row } from "antd";
-import trustCardBg from "../../public/trust-card-bg.png";
+import trustCardBg from "../../public/images/trust-card-bg.png";
+import { useTranslation } from "react-i18next";
 
 const Trust = observer(() => {
+  const { t } = useTranslation();
+
   return (
     <div className={"bg-[#000806] text-white"}>
       <div className="px-5 md:px-10 lg:px-20">
@@ -11,17 +14,11 @@ const Trust = observer(() => {
         </p>
         <Row gutter={[30, 30]}>
           <Col xs={24} sm={24} md={18} lg={16} xl={16}>
-            <p className={"md:text-2xl text-justify mb-3"}>
-              Начала свою деятельность в качестве IT-интегратора, установив
-              партнерские отношения с такими компаниями, как «Green White
-              Solutions» (ПО Smartup & Verifix-HR), зарубежной IT-компанией «Abm
-              Cloud» и аутсорсинговой компанией «IT-Brick». Параллельно с этим
-              располагав опытным и амбициозным отделом разработки.
-            </p>
+            <p className={"md:text-2xl text-justify mb-3"}>{t("about 4")}</p>
           </Col>
           <Col xs={24} sm={24} md={6} lg={8} xl={8}>
             <div className="flex flex-col gap-2 justify-center items-center">
-              <Image src="/sertificate.png" alt="" />
+              <Image src="/images/sertificate.png" alt="" />
               <p className={"italic text-xl"}>IT park resident since 2022</p>
             </div>
           </Col>
@@ -34,7 +31,7 @@ const Trust = observer(() => {
               style={{ backgroundImage: `url(${trustCardBg})` }}
             >
               <div className="text-center">
-                <p className={"text-xl"}>Успешных проекты</p>
+                <p className={"text-xl"}>{t("successful projects")}</p>
               </div>
               <div className="flex gap-2">
                 <div className="flex justify-center items-center w-full h-full gap-2">
@@ -56,7 +53,7 @@ const Trust = observer(() => {
               style={{ backgroundImage: `url(${trustCardBg})` }}
             >
               <div className="text-center">
-                <p className={"text-xl"}>Специалисты</p>
+                <p className={"text-xl"}>{t("specialists")}</p>
               </div>
               <div className="flex gap-2">
                 <div className="flex justify-center items-center w-full h-full gap-2">
@@ -78,7 +75,7 @@ const Trust = observer(() => {
               style={{ backgroundImage: `url(${trustCardBg})` }}
             >
               <div className="text-center">
-                <p className={"text-xl"}>Страны</p>
+                <p className={"text-xl"}>{t("countries")}</p>
               </div>
               <div className="flex gap-2">
                 <div className="flex justify-center items-center w-full h-full gap-2">
@@ -100,7 +97,7 @@ const Trust = observer(() => {
               style={{ backgroundImage: `url(${trustCardBg})` }}
             >
               <div className="text-center">
-                <p className={"text-xl"}>Опыт по направлениям</p>
+                <p className={"text-xl"}>{t("experience")}</p>
               </div>
               <div className="flex gap-2">
                 <div className="flex justify-center items-center w-full h-full gap-2">

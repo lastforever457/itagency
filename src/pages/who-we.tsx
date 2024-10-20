@@ -1,12 +1,15 @@
 import { observer } from "mobx-react-lite";
 import { Col, Row } from "antd";
+import { useTranslation } from "react-i18next";
 
 const WhoWe = observer(() => {
+  const { t } = useTranslation();
+
   return (
     <div id={"about-us"} className="py-5 bg-[#000806] pb-32 w-full">
       <div className="px-5 md:px-10 lg:px-20">
-        <h1 className="text-white font-semibold text-3xl md:text-7xl pb-10 mt-3 mb-2 text-center">
-          IT Company
+        <h1 className="text-white font-semibold text-3xl md:text-6xl pb-10 mt-3 mb-2 text-center">
+          {t("IT Company")}
         </h1>
         <Row gutter={[30, 30]}>
           <Col data-aos="fade-right" xs={24} sm={24} md={12} lg={12} xl={12}>
@@ -17,22 +20,16 @@ const WhoWe = observer(() => {
             />
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-            <div data-aos="fade-left">
+            <div data-aos="fade-left" className={"text-justify"}>
               <span className={"text-white text-[26px]"}>
-                «Cloud-Solutions» LLC - Индивидуальные программные решения для
-                Вашего бизнеса Надежный партнер в цепочке поставок ИТ-услуг
+                {t("about title")}
               </span>
               <br />
               <br />
               <span className={"text-white text-[20px] text-justify"}>
-                — Освободите свой бизнес от IT-зависимости! Ваш уникальный
-                продукт — без абонентских оплат и долгих ожиданий.
-                <br />
-                *Ваш продукт, ваши правила. Никаких абонентских плат и
-                длительных доработок!
-                <br />
-                *С нами ваш продукт всегда под вашим контролем. Мы
-                разрабатываем, внедряем и предлагаем лучшие решения!
+                — {t("about 1")}
+                <br />— {t("about 2")}
+                <br />— {t("about 3")}
               </span>
             </div>
           </Col>
