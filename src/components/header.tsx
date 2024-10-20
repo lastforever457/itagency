@@ -3,7 +3,7 @@ import { useCallback, useMemo, useState } from "react";
 import { AiFillPhone } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Menu, Dropdown, Button, Drawer } from "antd";
+import { Menu, Dropdown, Button, Drawer, Segmented } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import useHeaderMenus from "../hooks/use-header-menus.tsx";
 import { useTranslation } from "react-i18next";
@@ -15,13 +15,13 @@ const MainHeader = observer(() => {
   const { i18n } = useTranslation();
 
   const handleMenuClick = (e: any) => {
-    const selectedLanguage = e.key;
+    const selectedLanguage = e;
     i18n.changeLanguage(selectedLanguage);
     localStorage.setItem("language", selectedLanguage);
   };
 
   const menu = (
-    <Menu onClick={handleMenuClick}>
+    <Menu onClick={(e) => handleMenuClick(e.key)}>
       <Menu.Item key="ru">Русский</Menu.Item>
       <Menu.Item key="en">English</Menu.Item>
     </Menu>
@@ -74,7 +74,8 @@ const MainHeader = observer(() => {
             alt=""
           />
           <h3 className="text-md font-bold sm:text-xl flex gap-2">
-            Cloud Solutions <span className={"hidden md:flex"}>IT Company</span>
+            Cloud Solutions{" "}
+            <span className={"hidden md:flex lg:hidden"}>IT Company</span>
           </h3>
         </div>
 
@@ -97,6 +98,16 @@ const MainHeader = observer(() => {
             open={isOpen}
             onClose={() => setIsOpen(false)}
           >
+            <div className={"flex gap-2"}>
+              <Segmented
+                defaultValue={i18n.language}
+                options={[
+                  { label: "Русский", value: "ru" },
+                  { label: "English", value: "en" },
+                ]}
+                onChange={(value: string) => handleMenuClick(value)}
+              />
+            </div>
             <Menu
               className={"bg-transparent w-full"}
               defaultSelectedKeys={["1"]}
