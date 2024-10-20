@@ -31,52 +31,54 @@ const SwiperComponent = observer(() => {
   );
 
   return (
-    <Swiper
-      className={"bg-black"}
-      autoplay={{
-        delay: 0,
-        disableOnInteraction: false,
-      }}
-      speed={3000}
-      loop={true}
-      slidesPerView={1}
-      breakpoints={{
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
-        1280: {
-          slidesPerView: 4,
-          spaceBetween: 50,
-        },
-        1536: {
-          slidesPerView: 4,
-          spaceBetween: 60,
-        },
-      }}
-    >
-      {imageLinks.map((link, index) => (
-        <SwiperSlide key={index}>
-          <div className="w-[100%] h-[200px] object-cover rounded-2xl overflow-hidden flex justify-center items-center p-5">
-            <Image
-              className={
-                "w-full h-full rounded-2xl bg-center bg-cover object-cover"
-              }
-              src={link}
-              alt="Image 1"
-            />
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className={"w-[100%]"}>
+      <Swiper
+        className={"bg-black"}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+        }}
+        speed={3000}
+        loop={true}
+        slidesPerView={1}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+          1536: {
+            slidesPerView: 4,
+            spaceBetween: 60,
+          },
+        }}
+      >
+        {imageLinks.map((link, index) => (
+          <SwiperSlide key={index}>
+            <div className="w-[100%] h-[200px] object-cover rounded-2xl overflow-hidden flex justify-center items-center p-5">
+              <Image
+                className={
+                  "w-full h-full rounded-2xl bg-center bg-cover object-cover"
+                }
+                src={link}
+                alt="Image 1"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 });
 

@@ -90,7 +90,7 @@ const Contacts = observer(() => {
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <div
-            data-aos="fade-up-right"
+            data-aos="fade-up"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
             style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >
@@ -116,7 +116,7 @@ const Contacts = observer(() => {
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <div
-            data-aos="fade-up-left"
+            data-aos="fade-up"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
             style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >
@@ -142,7 +142,7 @@ const Contacts = observer(() => {
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <div
-            data-aos="fade-up-right"
+            data-aos="fade-up"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
             style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >
@@ -165,7 +165,7 @@ const Contacts = observer(() => {
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <div
-            data-aos="fade-up-left"
+            data-aos="fade-up"
             className="flex bg-cover bg-center object-cover p-5 rounded-2xl gap-3 md:gap-5"
             style={{ backgroundImage: `url("/images/trust-card-bg.png")` }}
           >

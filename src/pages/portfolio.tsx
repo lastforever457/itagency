@@ -55,7 +55,7 @@ function Portfolio() {
     >
       <Row>
         <Col xs={24} md={24} lg={8} xl={8}>
-          <div data-aos="fade-right">
+          <div data-aos="fade-up">
             <h1 className="text-4xl text-white font-bold mb-6">
               {t("portfolio").toUpperCase()}
             </h1>

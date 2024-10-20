@@ -6,13 +6,13 @@ const WhoWe = observer(() => {
   const { t } = useTranslation();
 
   return (
-    <div id={"about-us"} className="py-5 bg-[#000806] pb-32 w-full">
+    <div id={"about-us"} className="py-5 bg-[#000806] pb-32 w-[100%]">
       <div className="px-5 md:px-10 lg:px-20">
         <h1 className="text-white font-semibold text-3xl md:text-6xl pb-10 mt-3 mb-2 text-center">
           {t("IT Company")}
         </h1>
         <Row gutter={[30, 30]}>
-          <Col data-aos="fade-right" xs={24} sm={24} md={12} lg={12} xl={12}>
+          <Col xs={24} sm={24} md={12} lg={12} xl={12}>
             <img
               src="https://mybayutcdn.bayut.com/mybayut/wp-content/uploads/Business-Setup-Consultant-in-Dubai-_-Cover-21-2-23.jpg"
               alt=""
@@ -20,7 +20,7 @@ const WhoWe = observer(() => {
             />
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-            <div data-aos="fade-left" className={"text-justify"}>
+            <div className={"text-justify"}>
               <span className={"text-white text-[26px]"}>
                 {t("about title")}
               </span>
